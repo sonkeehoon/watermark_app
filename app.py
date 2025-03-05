@@ -5,6 +5,17 @@ import tkinter.messagebox as msgbox
 from pathlib import Path
 from tkinter.colorchooser import *
 from constants import *
+import os
+
+
+
+def resource_path(relpath):
+    
+    try:
+        abspath = sys._MEIPASS
+    except Exception:
+        abspath = os.path.abspath(".")
+    return os.path.join(abspath, relpath)
 
 def update_Entry(target: tk.Entry, content): # 엔트리 내용 갱신
     
@@ -90,6 +101,8 @@ def make_watermark():
 
 # 윈도우
 win = tk.Tk()
+ico = tk.PhotoImage(file=resource_path(ICON))
+win.iconphoto(False, ico)
 win.title(WINDOW_TITLE)
 win.resizable(False, False)
 win.configure(bg=BACKGROUND_COLOR)

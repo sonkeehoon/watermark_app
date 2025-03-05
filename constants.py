@@ -15,6 +15,7 @@ SEARCH_BUTTON_COLOR = {"bg":"#007ACC",
                        "activeforeground":"black"}
 LABELFRAME_FONT = ("Arial", 10, "bold")
 INFO_FONT = ("Arial", 10, "bold")
+ICON = "water.png"
 
 """developer info"""
 DEVELOPER_NAME = "손기훈"
