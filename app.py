@@ -1,11 +1,14 @@
+# 내장 라이브러리
+from pathlib import Path
+from constants import *
+import os
+
+# 외장 라이브러리
 from PIL import Image, ImageDraw, ImageFont
 import tkinter as tk
 from tkinter import filedialog, ttk
 import tkinter.messagebox as msgbox
-from pathlib import Path
 from tkinter.colorchooser import *
-from constants import *
-import os
 
 
 
