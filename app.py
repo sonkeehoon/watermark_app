@@ -9,7 +9,7 @@ import os
 
 
 
-def resource_path(relpath):
+def resource_path(relpath: str)-> str:
     
     try:
         abspath = sys._MEIPASS
@@ -17,14 +17,14 @@ def resource_path(relpath):
         abspath = os.path.abspath(".")
     return os.path.join(abspath, relpath)
 
-def update_Entry(target: tk.Entry, content): # 엔트리 내용 갱신
+def update_Entry(target: tk.Entry, content: str)-> None: # 엔트리 내용 갱신
     
     target.config(state="normal")
     target.delete(0, tk.END)
     target.insert(0, content)
     target.config(state="readonly")
     
-def color_pick(txt_color:tk.StringVar):
+def color_pick(txt_color: tk.StringVar)-> None:
     
     txt_color.set(askcolor()[1]) # askcolor() returns (RGB, HEX)
     
@@ -32,14 +32,14 @@ def color_pick(txt_color:tk.StringVar):
         font_color_Label.config(bg=txt_color.get(), 
                                 text="현재 글자색")   
 
-def add_file():
+def add_file()-> None:
     
-    file = filedialog.askopenfilename(title="이미지 파일을 선택하세요",
+    file = filedialog.askopenfilename(title="이미지 파일을 선택하세요", 
                                       filetypes=[("이미지 파일","*.jpg;*.jpeg;*.png")])
     
     if file: update_Entry(image_ent, file)
 
-def browse_dest_path():
+def browse_dest_path()-> None:
     
     folder_selected = filedialog.askdirectory(title="저장 경로 선택")
     
@@ -48,7 +48,7 @@ def browse_dest_path():
     
     if txt_dest_path: update_Entry(txt_dest_path, folder_selected)
     
-def make_watermark():
+def make_watermark()-> None:
     
     # 예외 처리
     if not image_ent.get(): # 이미지 선택 안한경우
