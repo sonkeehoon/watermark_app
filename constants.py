@@ -3,7 +3,7 @@ import sys
 """app.py config file"""
 WINDOW_SIZE = "400x350"
 WINDOW_TITLE = "워터마크 생성기"
-FONT_TYPE = "NanumGothic"
+FONT_TYPE = "malgunbd"
 FONT_SIZE = 20
 MARGIN = 10
 WATERMARK_SUFFIX = "_watermark."
